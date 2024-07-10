@@ -12,8 +12,8 @@ birthdays_data = pd.read_csv("birthdays.csv")
 birthdays_dict = {(data_row["month"],data_row["day"]): data_row for (index, data_row) in birthdays_data.iterrows()}
 
 
-my_email = "aaache20@gmail.com"
-password = "ocdn irlf usvm body"
+my_email = "sender email"
+password = "app password"
 
 if today_tuple in birthdays_dict:
     name = birthdays_dict[today_tuple]['name']
