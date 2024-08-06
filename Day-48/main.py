@@ -1,16 +1,30 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
 
+# Set up Chrome options
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option("detach", True)
 
+# Initialize the driver
 driver = webdriver.Chrome(options=chrome_options)
+driver.get("https://orteil.dashnet.org/experiments/cookie/")
 
-driver.get("https://www.amazon.com/dp/B075CYMYK6?psc=1&ref_=cm_sw_r_cp_ud_ct_FM9M699VKHTT47YD50Q6")
+while True:
+    driver.find_element(By.XPATH, value='//*[@id="cookie"]').click()
+    if time.sleep(5):
+        driver.find_element(By.XPATH, value='//*[@id="buyCursor"]').click()
 
-price_dollar = driver.find_element(By.CLASS_NAME, value="a-price-whole").text
-price_cents = driver.find_element(By.CLASS_NAME, value="a-price-fraction").text
+# last_name = driver.find_element(By.XPATH, value='/html/body/form/input[2]')
+# last_name.send_keys("Acheampong")
+#
+# email = driver.find_element(By.XPATH, value='/html/body/form/input[3]')
+# email.send_keys("aaaaikins@gmail.com")
+#
+# sign_up = driver.find_element(By.XPATH, value='/html/body/form/button').click()
+# # sign_up.send_keys(Keys.ENTER)
 
-print(f"The price is {price_dollar}.{price_cents}")
-driver.close()
-#driver.quit()
+# driver.quit()
