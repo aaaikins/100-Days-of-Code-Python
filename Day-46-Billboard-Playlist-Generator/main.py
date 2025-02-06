@@ -5,10 +5,10 @@ from spotipy.oauth2 import SpotifyOAuth
 import streamlit as st
 import time
 
-# Spotify API credentials (Store these securely)
+# Spotify API credentials
 CLIENT_ID = "9c467e2cb4b04af6a178d759e923b911"
 CLIENT_SECRET = "a33aea5b6b0e4aed91fdf8a728cd7ec5"
-REDIRECT_URI = "http://localhost:8080"  # Use localhost for Streamlit
+REDIRECT_URI = "http://localhost:8080"
 SCOPE = "playlist-modify-private user-read-private"
 
 def get_billboard_top_100(date):
